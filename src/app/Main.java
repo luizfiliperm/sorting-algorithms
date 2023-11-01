@@ -1,6 +1,7 @@
 package app;
 
 import algotithms.BubbleSort;
+import algotithms.InsertionSort;
 import algotithms.SelectionSort;
 
 import java.util.Scanner;
@@ -49,6 +50,10 @@ public class Main {
             case 2 -> {
                 SelectionSort.sort(array);
                 yield "Selection Sort";
+            }
+            case 3 -> {
+                InsertionSort.sort(array);
+                yield "Insertion Sort";
             }
             default -> "";
         };
