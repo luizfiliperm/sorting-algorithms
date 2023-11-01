@@ -1,9 +1,6 @@
 package app;
 
-import algotithms.BubbleSort;
-import algotithms.InsertionSort;
-import algotithms.MergeSort;
-import algotithms.SelectionSort;
+import algotithms.*;
 
 import java.util.Scanner;
 
@@ -60,12 +57,18 @@ public class Main {
                 MergeSort.sort(array);
                 yield "Merge Sort";
             }
+            case 5 -> {
+                QuickSort.sort(array);
+                yield "Quick Sort";
+            }
             default -> "";
         };
 
 
         System.out.printf("\nYour array after " + algorithm +" algorithm: \n");
         printArray(array);
+        divider();
+
         sc.close();
     }
 
