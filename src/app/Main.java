@@ -1,5 +1,7 @@
 package app;
 
+import algotithms.BubbleSort;
+
 import java.util.Scanner;
 
 public class Main {
@@ -33,10 +35,31 @@ public class Main {
         System.out.print("Your choice: ");
         int choice = sc.nextInt();
         divider();
+
+        System.out.println("Your array before sorting: ");
+        printArray(array);
+        String algorithm = "";
+
+
+        switch (choice) {
+            case 1:
+                BubbleSort.sort(array);
+                algorithm = "Bubble Sort";
+                break;
+        }
+
+        System.out.printf("\nYour array after " + algorithm +" algorithm: \n");
+        printArray(array);
         sc.close();
     }
 
     public static void divider() {
         System.out.println("--------------------------------------------------");
+    }
+
+    public static void printArray(int[] array) {
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
     }
 }
