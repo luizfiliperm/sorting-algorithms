@@ -1,6 +1,7 @@
 package app;
 
 import algotithms.BubbleSort;
+import algotithms.SelectionSort;
 
 import java.util.Scanner;
 
@@ -38,15 +39,20 @@ public class Main {
 
         System.out.println("Your array before sorting: ");
         printArray(array);
-        String algorithm = "";
 
 
-        switch (choice) {
-            case 1:
+        String algorithm = switch (choice) {
+            case 1 -> {
                 BubbleSort.sort(array);
-                algorithm = "Bubble Sort";
-                break;
-        }
+                yield "Bubble Sort";
+            }
+            case 2 -> {
+                SelectionSort.sort(array);
+                yield "Selection Sort";
+            }
+            default -> "";
+        };
+
 
         System.out.printf("\nYour array after " + algorithm +" algorithm: \n");
         printArray(array);
