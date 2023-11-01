@@ -55,6 +55,7 @@ public class Main {
         }while(option < 1 || option > 5);
 
 
+        long startTime = System.nanoTime();
         String algorithm = switch (option) {
             case 1 -> {
                 BubbleSort.sort(array);
@@ -79,10 +80,16 @@ public class Main {
             default -> "";
         };
 
+        long endTime = System.nanoTime();
+
+        long timeElapsed = endTime - startTime;
 
         System.out.printf("\nYour array after " + algorithm +" algorithm: \n");
+
         printArray(array);
+
         divider();
+        System.out.println("Time taken to sort array: " + timeElapsed + " nano seconds");
         sc.close();
     }
 
