@@ -32,9 +32,16 @@ public class Main {
         System.out.println("4. Merge Sort");
         System.out.println("5. Quick Sort");
 
+        int choice;
+        do{
+
         System.out.print("Your choice: ");
-        int choice = sc.nextInt();
+        choice = sc.nextInt();
         divider();
+        if(choice < 1 || choice > 5)
+            System.out.println("Invalid choice! Please choose again!");
+        }while(choice < 1 || choice > 5);
+
 
         System.out.println("Your array before sorting: ");
         printArray(array);
@@ -73,7 +80,7 @@ public class Main {
     }
 
     public static void divider() {
-        System.out.println("--------------------------------------------------");
+        System.out.println("\n--------------------------------------------------");
     }
 
     public static void printArray(int[] array) {
